@@ -25,7 +25,6 @@ file_list = [
     "requirements.txt",
     "setup.py",
     "research/research.ipynb"
-
 ]
 
 try:
