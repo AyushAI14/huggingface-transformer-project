@@ -11,7 +11,6 @@ from ensure import ensure_annotations
 def read_yaml_file(filepath:str)->config_box:
     """
     This function extract yaml files from a given path
-
     return config_box type result 
     """
     try :
