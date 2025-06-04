@@ -1,38 +1,31 @@
 import os
 from pathlib import Path
-from tabnanny import verbose
 import yaml
 from src.logging import logger
 from box.exceptions import BoxValueError
 from typing import Any
 from box import config_box
-from ensure import ensure_annotations
+from box import Box  # fix import
 
-def read_yaml_file(filepath:str)->config_box:
-    """
-    This function extract yaml files from a given path
-    return config_box type result 
-    """
-    try :
-        with open(filepath,'w') as yaml_file:
+def read_yaml_file(filepath: str) -> Box:  # optional typing update
+    try:
+        with open(filepath, 'r') as yaml_file:
             content = yaml.safe_load(yaml_file)
-            logger.debug("Yaml file sucessfully loaded")
-            return config_box(content)
+            logger.debug("YAML file successfully loaded")
+            return Box(content)  # call Box, not config_box
     except BoxValueError:
-        raise ValueError("yaml file is empty")
+        raise ValueError("YAML file is empty")
     except Exception as e:
         raise e
 
-@ensure_annotations
-def createDirs(filepath_dirs:list):
-    """create list of directories
+
+def createDirs(filepath_dirs: list):
+    """
+    Create directories from a list of paths.
 
     Args:
-        path_to_directories (list): list of path of directories
-        ignore_log (bool, optional): ignore if multiple dirs is to be created. Defaults to False.
+        filepath_dirs (list): List of directory paths to create.
     """
-
     for filepaths in filepath_dirs:
-        os.makedirs(filepaths,exist_ok=True)
-        if verbose:
-            logger.info(f"created directory at: {Path}")
+        os.makedirs(filepaths, exist_ok=True)
+        logger.info(f"Created directory at: {filepaths}")

@@ -1,1 +1,35 @@
 [2025-05-29 18:14:59,658: INFO: main: just testing]
+[2025-06-04 13:34:23,352: INFO: common: Created directory at: artifacts]
+[2025-06-04 13:36:40,592: INFO: common: Created directory at: artifacts]
+[2025-06-04 13:36:41,874: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-06-04 13:37:43,240: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-06-04 13:41:09,936: INFO: common: Created directory at: artifacts]
+[2025-06-04 13:41:10,154: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-06-04 13:41:57,522: INFO: common: Created directory at: artifacts]
+[2025-06-04 13:41:57,626: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-06-04 13:42:26,813: INFO: common: Created directory at: artifacts]
+[2025-06-04 13:42:26,992: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-06-04 13:43:37,342: INFO: common: Created directory at: artifacts]
+[2025-06-04 13:43:37,557: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-06-04 13:48:34,374: INFO: common: Created directory at: artifacts]
+[2025-06-04 13:48:34,384: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-06-04 13:48:37,272: INFO: 4255394241: File is downloaded]
+[2025-06-04 14:17:36,795: INFO: main: Initiating Data ingestion stage intiated]
+[2025-06-04 14:17:36,796: INFO: common: Created directory at: artifacts]
+[2025-06-04 14:17:36,796: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-06-04 14:17:36,797: ERROR: main: DataIngestionConfig.__init__() got an unexpected keyword argument 'source_url']
+Traceback (most recent call last):
+  File "/home/ayush/Documents/AI/Projects/huggingface-transformer-project/main.py", line 9, in <module>
+    Data_Ingestion_Pipeline.intiate_data_ingestion()
+  File "/home/ayush/Documents/AI/Projects/huggingface-transformer-project/src/pipeline/stage_1_data_ingestion.py", line 10, in intiate_data_ingestion
+    data_ingestion_config=config.get_data_ingestion_config()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ayush/Documents/AI/Projects/huggingface-transformer-project/src/config/configuration.py", line 18, in get_data_ingestion_config
+    data_ingestion_config=DataIngestionConfig(
+                          ^^^^^^^^^^^^^^^^^^^^
+TypeError: DataIngestionConfig.__init__() got an unexpected keyword argument 'source_url'
+[2025-06-04 14:18:49,553: INFO: main: Initiating Data ingestion stage intiated]
+[2025-06-04 14:18:49,557: INFO: common: Created directory at: artifacts]
+[2025-06-04 14:18:49,557: INFO: common: Created directory at: artifacts/data_ingestion]
+[2025-06-04 14:18:52,172: INFO: Data_ingestion: File is downloaded]
+[2025-06-04 14:18:52,304: INFO: main: Data ingestion stage initiated]
