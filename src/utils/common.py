@@ -1,12 +1,12 @@
 import os
 from pathlib import Path
+from tabnanny import verbose
 import yaml
 from src.logging import logger
 from box.exceptions import BoxValueError
 from typing import Any
 from box import config_box
 from ensure import ensure_annotations
-
 
 def read_yaml_file(filepath:str)->config_box:
     """
@@ -35,4 +35,4 @@ def createDirs(filepath_dirs:list):
     for filepaths in filepath_dirs:
         os.makedirs(filepaths,exist_ok=True)
         if verbose:
-            logger.info(f"created directory at: {path}")
+            logger.info(f"created directory at: {Path}")
