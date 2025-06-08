@@ -22,4 +22,11 @@ data_trainer:
   val_path: "artifacts/data_transformation/samsum-dataset/val"
   test_path: "artifacts/data_transformation/samsum-dataset/test"
 
-
+data_evalution:
+    root_dir: artifacts/data_evalution
+    train_path: "artifacts/data_transformation/samsum-dataset/train"
+    val_path: "artifacts/data_transformation/samsum-dataset/val"
+    test_path: "artifacts/data_transformation/samsum-dataset/test"
+    model_path: artifacts/data_trainer/pegasus-samsum-model
+    tokenizer_path: artifacts/data_trainer/tokenizer
+    metric_file_name: artifacts/model_evaluation/metrics.csv

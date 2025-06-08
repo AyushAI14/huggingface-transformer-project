@@ -1,6 +1,6 @@
 from src.constants import *
 from src.utils.common import read_yaml_file,createDirs
-from src.entity import DataIngestionConfig ,DataTransformationConfig,DataTrainerConfig
+from src.entity import DataIngestionConfig ,DataTransformationConfig,DataTrainerConfig,dataEvalutionConfig
 
 class ConfigurationManager:
     def __init__(self,
@@ -60,3 +60,17 @@ class ConfigurationManager:
                 gradient_accumulation_steps = params.gradient_accumulation_steps
             )
             return data_trainer 
+    def get_data_evalution_config(self)-> dataEvalutionConfig:
+        config=self.config.data_evalution
+        createDirs([config.root_dir])
+
+        data_evalution_config = dataEvalutionConfig(
+            root_dir=Path(config.root_dir),
+            model_path=Path(config.model_path),
+            tokenizer_path=Path(config.tokenizer_path),
+            train_path=Path(config.train_path),
+            val_path=Path(config.val_path),
+            test_path=Path(config.test_path),
+            metric_file_name=Path(config.metric_file_name)
+        )
+        return data_evalution_config 
